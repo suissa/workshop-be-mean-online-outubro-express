@@ -23,7 +23,7 @@ var _beer = {
         msg = 'Cerveja Inserida: ' + data;
         console.log('Cerveja Inserida: ', data);
       }
-      res.end(msg);
+      res.json(msg);
     });
 
   },
@@ -33,10 +33,10 @@ var _beer = {
         msg = 'Erro: ' + err;
         console.log('Erro: ', err);
       }else{
-        msg = 'Listagem: ' + data;
+        msg = data;
         console.log('Listagem: ', data);
       }
-      res.end(msg);
+      res.json(msg);
     });
 
   },
@@ -57,7 +57,7 @@ var _beer = {
         msg = 'Cervejas atualizadas com sucesso: ' + data;
         console.log('Cervejas atualizadas com sucesso', data);
       }
-      res.end(msg);
+      res.json(msg);
     });
 
   },
@@ -72,7 +72,7 @@ var _beer = {
         msg = 'Cervejas deletadas com sucesso: ' + data;
         console.log('Cerveja deletada com sucesso, quantidade: ', data);
       }
-      res.end(msg);
+      res.json(msg);
     });
 
   },
