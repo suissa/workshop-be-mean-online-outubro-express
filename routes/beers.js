@@ -19,5 +19,9 @@ router.get('/', function(req, res) {
   Controller.retrieve(req, res, callback);
 });
 
+router.get('/:id', function(req, res) {
+  res.view = 'beers/show';
+  Controller.show(req, res, callback);
+});
 
 module.exports = router;
