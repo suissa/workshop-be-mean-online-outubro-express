@@ -19,9 +19,22 @@ router.get('/', function(req, res) {
   Controller.retrieve(req, res, callback);
 });
 
+// Caso eu crie depois da rota com a variável :id
+// Todas as rotas vão cair nela pois ela espera qualquer coisa
+// Por isso precisamos setar as rotas estáticas antes
+router.get('/create', function(req, res) {
+  res.view = 'beers/create';
+  res.render(res.view, {title: 'Cadastro de cerveja'});
+});
+
 router.get('/:id', function(req, res) {
   res.view = 'beers/show';
   Controller.show(req, res, callback);
+});
+
+router.get('/:id/edit', function(req, res) {
+  res.view = 'beers/edit';
+  Controller.update(req, res, callback);
 });
 
 module.exports = router;
