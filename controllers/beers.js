@@ -40,6 +40,20 @@ var _beer = {
     });
 
   },
+  show: function(req, res) {
+    var query = {_id: req.params.id};
+    Beer.findOne(query, function (err, data) {
+      if (err){
+        msg = 'Erro: ' + err;
+        console.log('Erro: ', err);
+      }else{
+        msg = data;
+        console.log('Listagem: ', data);
+      }
+      res.json(msg);
+    });
+
+  },
   update: function(req, res) {
     var query = {name: 'Heineken'};
     var mod = {alcohol: 80};
