@@ -71,14 +71,14 @@ var _beer = {
 
   },
   delete: function(req, res) {
-    var query = {name: 'Heineken'};
+    var query = {_id: req.params.id};
 
     Beer.remove(query, function(err, data) {
       if(err) {
         msg = 'Erro: ' + err;
         console.log(err);
       } else {
-        msg = 'Cervejas deletadas com sucesso: ' + data;
+        msg = data;
         console.log('Cerveja deletada com sucesso, quantidade: ', data);
       }
       res.json(msg);

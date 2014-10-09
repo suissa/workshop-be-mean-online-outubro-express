@@ -17,8 +17,13 @@ router.post('/', function(req, res) {
 });
 
 // Altero a cerveja
-router.put('/:id/edit', function(req, res) {
+router.put('/:id', function(req, res) {
   Controller.update(req, res);
+});
+
+// Deleto a cerveja
+router.delete('/:id', function(req, res) {
+  Controller.delete(req, res);
 });
 
 
