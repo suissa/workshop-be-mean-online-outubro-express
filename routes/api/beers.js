@@ -11,4 +11,10 @@ router.get('/:id', function(req, res) {
   Controller.show(req, res);
 });
 
+// POST /api/beers
+router.post('/', function(req, res) {
+  Controller.create(req, res);
+});
+
+
 module.exports = router;
