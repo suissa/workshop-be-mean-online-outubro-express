@@ -3,13 +3,8 @@ var Beer = require('../models/beer');
 var _beer = {
   create: function(req, res) {
 
-    var dados = {
-      name: 'Heineken',
-      description: 'Até q eh boazinha',
-      alcohol: 5.5,
-      price: 3.5,
-      category: 'lager'
-    }
+    // recebendo os dados do POST
+    var dados = req.body;
 
     var model = new Beer(dados),
       msg = '';
@@ -20,7 +15,7 @@ var _beer = {
         console.log('Erro: ', err);
       }
       else{
-        msg = 'Cerveja Inserida: ' + data;
+        msg = data;
         console.log('Cerveja Inserida: ', data);
       }
       res.json(msg);
