@@ -50,20 +50,20 @@ var _beer = {
 
   },
   update: function(req, res) {
-    var query = {name: 'Heineken'};
-    var mod = {alcohol: 80};
+    var query = {_id: req.params.id};
+    var mod = req.body;
     var optional = {
         upsert: false,
         multi: true
       };
 
-    Beer.update(query, mod, optional, function (err, data) {
+    Beer.update(query, mod, function (err, data) {
       if (err){
         msg = 'Erro: ' + err;
         console.log('Erro: ', err);
       }
       else{
-        msg = 'Cervejas atualizadas com sucesso: ' + data;
+        msg = data;
         console.log('Cervejas atualizadas com sucesso', data);
       }
       res.json(msg);

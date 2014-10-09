@@ -16,5 +16,10 @@ router.post('/', function(req, res) {
   Controller.create(req, res);
 });
 
+// Altero a cerveja
+router.put('/:id/edit', function(req, res) {
+  Controller.update(req, res);
+});
+
 
 module.exports = router;
