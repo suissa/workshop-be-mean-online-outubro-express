@@ -11,10 +11,11 @@ var callback = function(err, data, res){
     msg = data;
     console.log('Cerveja Inserida: ', data);
   }
-  res.render('beers/list', {title: 'Listagem de cervejas', beers: msg});
+  res.render(res.view, {title: 'Listagem de cervejas', beers: msg});
 };
 
 router.get('/', function(req, res) {
+  res.view = 'beers/list';
   Controller.retrieve(req, res, callback);
 });
 
