@@ -111,6 +111,43 @@ var _beer = {
 ```
 
 
+Agora vamos criar nossas rotas para a parte visual do nosso sistema, utilizando o Jade. Para isso vamos criar um módulo de rotas para isso. Nesse módulo utilizaremo apenas o verbo `GET` pois acessará apenas nossas views.
+
+Vamos começar criando a rota para nossa listagem de cervejas
+
+```
+router.get('/', function(req, res) {
+  res.render('beers/list', {title: 'TESTE'});
+});
+```
+
+Como iremos listar nossas cervejas precisamos passar o array delas no nosso objeto que será renderizado com a view, para isso precisamo chamar a função de listagem das cervejas do nosso Controller.
+
+```
+
+```
+
+Criamos nossa view de listagem de cervejas:
+
+```
+extends ../layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  ul
+  for beer in beers
+    li
+      | #{beer.name} - #{beer.price}
+
+```
+
+
+
+
+
+
 
 
 
