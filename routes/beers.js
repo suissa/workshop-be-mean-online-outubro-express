@@ -34,7 +34,7 @@ router.get('/:id', function(req, res) {
 
 router.get('/:id/edit', function(req, res) {
   res.view = 'beers/edit';
-  Controller.update(req, res, callback);
+  Controller.show(req, res, callback);
 });
 
 module.exports = router;

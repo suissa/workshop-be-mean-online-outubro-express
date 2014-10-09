@@ -145,6 +145,27 @@ block content
 
 
 
+Precisamos utilizar o method-override para subistituir o verbo POST do FORM para PUT na nossa API.
+
+```
+var methodOverride = require('method-override');
+
+...
+
+app.use(bodyParser.urlencoded())
+app.use(methodOverride(function(req, res){
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method
+  }
+}))
+```
+
+
+
+
 
 
 

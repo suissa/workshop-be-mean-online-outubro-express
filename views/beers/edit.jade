@@ -6,27 +6,27 @@ block content
 
   form(enctype='x-www-form-urlencoded', 
     method='POST', 
-    action='/api/beers/#{beer._id}')
+    action='/api/beers/#{beers._id}')
   
     label(for='name') 
       span.form-label Name: 
-      input(type='text', name='name', value='#{beer.name}')
+      input(type='text', name='name', value='#{beers.name}')
 
     label(for='price') 
       span.form-label Price: 
-      input(type='text', name='price', value='#{beer.price}')
+      input(type='text', name='price', value='#{beers.price}')
 
     label(for='alcohol') 
       span.form-label Alcohol: 
-      input(type='text', name='alcohol', value='#{beer.alcohol}')
+      input(type='text', name='alcohol', value='#{beers.alcohol}')
 
     label(for='category') 
       span.form-label Category: 
-      input(type='text', name='category', value='#{beer.category}')
+      input(type='text', name='category', value='#{beers.category}')
 
     label(for='description') 
       span.form-label Description: 
-      textarea(name='description') #{beer.description}
+      textarea(name='description') #{beers.description}
 
     input(type='submit', value='EDITAR')
     input(type='hidden', name='_method', value='PUT')
